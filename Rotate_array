@@ -1,0 +1,22 @@
+class Solution(object):
+
+    #Creating class rightnode to rotate elements one by one 
+    
+    def rotate(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
+        
+        def rightRotate(num, k, n):
+            subset1 = num[0:n-1]
+            subset2 = num[n-1]
+            subset1.insert(0,subset2)
+            return subset1        
+        
+        for i in range (k):
+            n = len(nums)
+            nums = rightRotate(nums,k,n)
+                      
+        print nums
